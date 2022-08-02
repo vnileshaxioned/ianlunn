@@ -72,4 +72,20 @@
     );
     register_post_type( $cpt, $args );
   }
+
+  // for option page
+  if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+      'page_title' 	=> 'Custom Option Page',
+      'menu_title'	=> 'Custom Option Page',
+      'menu_slug' 	=> 'custom-option-page',
+      'icon_url'    => 'dashicons-admin-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+      'page_title' 	=> 'Footer Section',
+      'menu_title'	=> 'Footer',
+      'parent_slug' => 'custom-option-page',
+    ));
+  }
 ?>
