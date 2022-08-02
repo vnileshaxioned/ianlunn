@@ -12,7 +12,7 @@
           get_template_part('template-parts/pages/portfolio/content', 'project');
           break;
         case 'client_testimonial':
-          get_template_part('template-parts/pages/portfolio/content', 'client-testimonia');
+          get_template_part('template-parts/pages/portfolio/content', 'client-testimonial');
           break;
         case 'about_section':
           get_template_part('template-parts/pages/portfolio/content', 'about');
