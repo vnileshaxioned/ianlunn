@@ -89,6 +89,12 @@
     ));
 
     acf_add_options_sub_page(array(
+      'page_title' 	=> 'Header Section',
+      'menu_title'	=> 'Header',
+      'parent_slug' => 'custom-option-page',
+    ));
+
+    acf_add_options_sub_page(array(
       'page_title' 	=> 'Footer Section',
       'menu_title'	=> 'Footer',
       'parent_slug' => 'custom-option-page',

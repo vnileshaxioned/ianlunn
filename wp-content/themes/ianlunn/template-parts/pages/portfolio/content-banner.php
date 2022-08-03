@@ -6,7 +6,7 @@
   $portfolio_cta_url = $contents['view_portfolio_cta']['url'];
   if ($title || $short_description || $portfolio_cta_title || $portfolio_cta_url) { ?>
   <section class="portfolio-banner">
-    <div class="wrapper">
+    <div class="wrapper wrapper--portfolio-banner">
       <?php if ($title) { ?>
         <h2 class="portfolio-banner__heading"><?php echo $title; ?></h2>
       <?php } if ($short_description) { ?>

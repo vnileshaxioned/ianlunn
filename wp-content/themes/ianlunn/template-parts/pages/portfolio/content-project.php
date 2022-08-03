@@ -2,7 +2,7 @@
   $projects = get_sub_field('select_project');
   if ($projects) { ?>
   <section class="portfolio-project">
-    <div class="wrapper">
+    <div class="wrapper wrapper--portfolio-project">
       <ul class="portfolio-project__container">
         <?php
           foreach ($projects as $project) {
