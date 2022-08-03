@@ -2,6 +2,12 @@
   // for classic editor
   add_filter('use_block_editor_for_post', '__return_false');
 
+  // enqueue the style and script files
+  add_action('wp_enqueue_scripts', 'test_theme_script');
+  function test_theme_script() {
+    wp_enqueue_style('custom-styling', get_template_directory_uri().'/assets/sass/style.css');
+  }
+
   // theme support
   add_action('after_setup_theme', 'custom_theme_setup');
   function custom_theme_setup() {
