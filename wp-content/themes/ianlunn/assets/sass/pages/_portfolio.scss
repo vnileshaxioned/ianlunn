@@ -1,0 +1,108 @@
+// banner section started here
+.portfolio-banner { background-color: $primary-color; }
+
+.wrapper--portfolio-banner {
+  padding: 138px 0;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+.portfolio-banner__heading { font-size: 40px; }
+
+.portfolio-banner__description {
+  margin: 16px 0 6px;
+  @include fontStyle(21px, '', '');
+}
+
+.portfolio-banner__cta_button {
+  margin: 38px 0 60px;
+  @include display(flex, center, '', column);
+  color: #fff;
+  @include fontStyle('', 700, uppercase);
+  @include transition;
+
+  &::after {
+    content: '\f107';
+    font-family: 'FontAwesome';
+    float: right;
+  }
+
+  &:hover { color: $paragraph; }
+}
+// banner section ended here
+// project section started here
+.wrapper--portfolio-project { width: 100%; }
+
+.portfolio-project__container {
+  @include display(flex, '', '', '');
+  flex-wrap: wrap;
+}
+
+.portfolio-project__list { flex-basis: 33.3%; }
+.portfolio-project__image { height: 100%; }
+
+.portfolio-project__image img {
+  object-fit: cover;
+  height: 100%;
+}
+// project section ended here
+// testimonial section started here
+.wrapper--portfolio-client-testimonial {
+  width: 44%;
+  padding: 98px 0 36px;
+}
+
+.client-testimonial__container {
+  margin: 22px 0 0;
+  @include display(flex, '', '', column);
+}
+
+.client-testimonial__list {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.client-testimonial__list p {
+  margin-top: 60px;
+  line-height: 1.6;
+
+  &::before {
+    content: '\f10d';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    color: $header-cta;
+    font-family: 'FontAwesome';
+    font-size: 28px;
+    float: right;
+    transform: translateX(-50%);
+  }
+}
+
+.client-testimonial__list h3 {
+  margin-top: 16px;
+  font-weight: 900;
+}
+// testimonial section ended here
+// about section started here
+.portfolio-about { background-color: $primary-color; }
+.wrapper--portfolio-about { text-align: center; }
+
+.about__link {
+  padding: 18px 0 14px;
+  @include display(flex, center, center, '');
+  color: #fff;
+  @include fontStyle(18px, 700, uppercase);
+  @include transition;
+
+  &::after {
+    content: '\f138';
+    margin-left: 4px;
+    font-family: 'FontAwesome';
+    float: right;
+  }
+
+  &:hover { color: $paragraph; }
+}
+// about section ended here

@@ -1,0 +1,30 @@
+@mixin fontStyle($size, $weight, $transform) {
+	@if ($size != '') {
+  	font-size: $size;
+	}
+	@if ($weight != '') {
+		font-weight: $weight;
+	}
+	@if ($transform != '') {
+		text-transform: $transform;
+	}
+}
+
+@mixin display($name, $align, $justify, $direction) {
+	@if ($name != '') {
+		display: $name;
+	}
+	@if ($align != '') {
+		align-items: $align;
+	}
+	@if ($direction != '') {
+		flex-direction: $direction;
+	}
+	@if ($justify != '') {
+		justify-content: $justify;
+	}
+}
+
+@mixin transition {
+	transition: all .3s ease;
+}

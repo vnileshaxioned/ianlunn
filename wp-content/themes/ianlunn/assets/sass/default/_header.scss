@@ -1,7 +1,60 @@
 /*=================================
   Header styling starts here
 =================================*/
+header { background-color: $primary-color; }
 
+.wrapper--header {
+  width: 84%;
+  padding: 26px 0;
+  @include display(flex, center, '', '');
+}
+
+.logo__link {
+  @include display(flex, '', '', column);
+  color: #fff;
+}
+
+.logo__link_heading {
+  margin-bottom: 5px;
+  @include fontStyle(20px, 700, uppercase);
+}
+
+.navbar--primary {
+  margin-left: auto;
+  flex-basis: 60%;
+}
+
+.navbar__menu { @include display(flex, '', flex-end, ''); }
+.navbar__menu_list {
+  margin-left: 3.3%;
+
+  & .navbar__menu_list_item--active { border-bottom: 2px solid #fff; }
+}
+
+.navbar__menu_list_item {
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  color: #fff;
+  @include fontStyle(14px, 600, uppercase);
+  @include transition;
+
+  &:hover { border-bottom: 2px solid #fff; }
+}
+
+.hire {
+  margin-left: 1%;
+  flex-basis: 7.3%;
+}
+
+.hire__cta {
+  padding: 13px 11%;
+  background-color: $header-cta;
+  color: #fff;
+  @include fontStyle(14px, 600, uppercase);
+  @include transition;
+
+  &:hover { background-color: $header-cta-hover; }
+}
 /*=================================
   Header styling ends here
 =================================*/
