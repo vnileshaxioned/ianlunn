@@ -10,9 +10,7 @@
             get_template_part('template-parts/modules/footer/content', 'menu');
           ?>
         </div>
-        <div class="footer__bottom">
-          <?php get_template_part('template-parts/modules/footer/content', 'copyright'); ?>
-        </div>
+        <?php get_template_part('template-parts/modules/footer/content', 'copyright'); ?>
       </div>
     </footer>
     <!--footer section end-->
