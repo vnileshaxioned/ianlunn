@@ -1,7 +1,7 @@
 <?php
   $menus = get_field('menu', 'option');
   if ($menus) { ?>
-  <ul class="footer__menu">
+  <ul class="footer__top_elem footer__top_elem--menu">
     <?php
       foreach ($menus as $menu) {
         $menu_title = $menu['menu_link']['title'];

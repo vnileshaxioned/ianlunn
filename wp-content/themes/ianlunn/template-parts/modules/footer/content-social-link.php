@@ -1,7 +1,7 @@
 <?php
   $social_links = get_field('social_link', 'option');
   if ($social_links) { ?>
-  <ul class="footer__social_link">
+  <ul class="footer__top_elem footer__top_elem--social_link">
     <?php
       foreach ($social_links as $social_link) {
         $name = $social_link['name'];
