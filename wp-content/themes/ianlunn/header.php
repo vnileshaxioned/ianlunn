@@ -12,8 +12,22 @@
     <header>
       <div class="wrapper wrapper--header">
         <h1 class="logo">
+          <?php
+            $logo = get_field('logo', 'option');
+            $logo_url = $logo['url'] ? $logo['url'] : null;
+            $logo_alt = $logo['alt'] ? $logo['alt'] : $blog_name;
+            if ($logo_url) { ?>
+            <figure class="logo__image">
+              <img src="<?php echo $logo_url; ?>" alt="<?php echo $logo_alt; ?>">
+            </figure>
+          <?php } ?>
           <a href="<?php bloginfo('url'); ?>" class="logo__link" title="<?php bloginfo('name'); ?>"><span class="logo__link_heading"><?php bloginfo('name'); ?></span><span class="logo__link_sub_heading"><?php bloginfo('description'); ?></span></a>
         </h1>
+        <div class="hamburger">
+          <span class="hamburger__line hamburger__line--one">line</span>
+          <span class="hamburger__line hamburger__line--two">line</span>
+          <span class="hamburger__line hamburger__line--three">line</span>
+        </div>
         <?php
           if (function_exists('custom_menu')) { 
             custom_menu('primary');
