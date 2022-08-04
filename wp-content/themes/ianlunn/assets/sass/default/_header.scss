@@ -7,6 +7,20 @@ header { background-color: $primary-color; }
   width: 84%;
   padding: 26px 0;
   @include display(flex, center, '', '');
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-basis: 40%;
+}
+
+.logo__image {
+  margin-right: 3%;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  flex-basis: 9%;
 }
 
 .logo__link {
@@ -19,15 +33,19 @@ header { background-color: $primary-color; }
   @include fontStyle(20px, 700, uppercase);
 }
 
+.hamburger { display: none; }
+
 .navbar--primary {
   margin-left: auto;
   flex-basis: 60%;
+  @include transition;
 }
 
 .navbar__menu { @include display(flex, '', flex-end, ''); }
+
 .navbar__menu_list {
   margin-left: 3.3%;
-
+  
   & .navbar__menu_list_item--active { border-bottom: 2px solid #fff; }
 }
 
@@ -43,7 +61,7 @@ header { background-color: $primary-color; }
 
 .hire {
   margin-left: 1%;
-  flex-basis: 7.3%;
+  flex-basis: 8%;
 }
 
 .hire__cta {
