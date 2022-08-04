@@ -10,7 +10,7 @@
 
         if ($menu_title || $menu_url || $short_description) { ?>
         <li class="footer__menu_list">
-          <a href="<?php echo $menu_url; ?>" class="footer__menu_link">
+          <a href="<?php echo $menu_url; ?>" class="footer__menu_link" title="<?php echo $menu_title; ?>">
             <span class="footer__menu_name"><?php echo $menu_title; ?></span>
             <p class="footer__short_description"><?php echo $short_description; ?></p>
           </a>
