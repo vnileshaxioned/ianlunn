@@ -28,3 +28,9 @@
 @mixin transition {
 	transition: all .3s ease;
 }
+
+@mixin media($break_point) {
+  @if ($break_point) {
+    @media only screen and #{$break_point} { @content; }
+  }
+}

@@ -6,13 +6,31 @@
   margin: 0 auto;
   color: #fff;
   text-align: center;
+  @include media($tablet) {
+    width: 75%;
+    padding: 100px 0;
+  }
 }
 
-.portfolio-banner__heading { font-size: 40px; }
+.portfolio-banner__heading {
+  font-size: 40px;
+  @include media($tablet) { font-size: 28px; }
+  @include media($mobile_l) { font-size: 20px; }
+  @include media($mobile_s) {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
 
 .portfolio-banner__description {
   margin: 16px 0 6px;
   @include fontStyle(21px, '', '');
+  @include media($tablet) {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  @include media($mobile_l) { font-size: 14px; }
+  @include media($mobile_s) { font-size: 12px; }
 }
 
 .portfolio-banner__cta_button {
@@ -21,14 +39,15 @@
   color: #fff;
   @include fontStyle('', 700, uppercase);
   @include transition;
-
   &::after {
     content: '\f107';
     font-family: 'FontAwesome';
     float: right;
   }
-
-  &:hover { color: $paragraph; }
+  @include media($hover_disable) { &:hover { color: $paragraph; } }
+  @include media($tablet) { margin: 28px 0 0; }
+  @include media($mobile_l) { font-size: 14px; }
+  @include media($mobile_s) { font-size: 12px; }
 }
 // banner section ended here
 // project section started here
@@ -39,7 +58,11 @@
   flex-wrap: wrap;
 }
 
-.portfolio-project__list { flex-basis: 33.3%; }
+.portfolio-project__list {
+  flex-basis: 33.3%;
+  @include media($mobile_l) { flex-basis: 50%; }
+}
+
 .portfolio-project__image { height: 100%; }
 
 .portfolio-project__image img {
@@ -51,6 +74,11 @@
 .wrapper--portfolio-client-testimonial {
   width: 44%;
   padding: 98px 0 36px;
+  @include media($tablet) {
+    width: 60%;
+    padding: 50px 0 0;
+  }
+  @include media($mobile_l) { width: 80%; }
 }
 
 .client-testimonial__container {
@@ -78,11 +106,19 @@
     float: right;
     transform: translateX(-50%);
   }
+  @include media($mobile_l) {
+    margin-top: 50px;
+    font-size: 14px;
+    line-height: 1.4;
+
+    &::before { font-size: 22px; }
+  }
 }
 
 .client-testimonial__list h3 {
   margin-top: 16px;
   font-weight: 900;
+  @include media($mobile_l) { font-size: 14px; }
 }
 // testimonial section ended here
 // about section started here
@@ -102,7 +138,10 @@
     font-family: 'FontAwesome';
     float: right;
   }
-
-  &:hover { color: $paragraph; }
+  
+  @include media($hover_disable) {
+    &:hover { color: $paragraph; }
+  }
+  @include media($mobile_l) { font-size: 16px; }
 }
 // about section ended here
