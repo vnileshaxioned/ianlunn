@@ -11,7 +11,7 @@
         if ($name || $url || $short_description) { ?>
         <li class="footer__social_list">
           <a href="<?php echo $url; ?>" class="footer__social_icon footer__social_icon--<?php echo strtolower($name); ?>">
-            <p class="footer__short_description"><?php echo $short_description; ?></p>
+            <?php echo $short_description; ?>
           </a>
         </li>
       <?php }
