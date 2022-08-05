@@ -1,10 +1,8 @@
 // banner section started here
-.portfolio-banner { background-color: $primary-color; }
-
 .wrapper--portfolio-banner {
   padding: 138px 0;
   margin: 0 auto;
-  color: #fff;
+  color: $white-color;
   text-align: center;
   @include media($tablet) {
     width: 75%;
@@ -12,42 +10,52 @@
   }
 }
 
-.portfolio-banner__heading {
-  font-size: 40px;
-  @include media($tablet) { font-size: 28px; }
-  @include media($mobile_l) { font-size: 20px; }
-  @include media($mobile_s) {
-    font-size: 16px;
-    font-weight: 600;
-  }
-}
+.portfolio-banner {
+  background-color: $primary-color;
 
-.portfolio-banner__description {
-  margin: 16px 0 6px;
-  @include fontStyle(21px, '', '');
-  @include media($tablet) {
-    margin-top: 10px;
-    font-size: 16px;
-  }
-  @include media($mobile_l) { font-size: 14px; }
-  @include media($mobile_s) { font-size: 12px; }
-}
+  &__heading {
+    font-size: 40px;
 
-.portfolio-banner__cta_button {
-  margin: 38px 0 60px;
-  @include display(flex, center, '', column);
-  color: #fff;
-  @include fontStyle('', 700, uppercase);
-  @include transition;
-  &::after {
-    content: '\f107';
-    font-family: 'FontAwesome';
-    float: right;
+    @include media($tablet) { font-size: 28px; }
+    @include media($mobile_l) { font-size: 20px; }
+
+    @include media($mobile_s) {
+      font-size: 16px;
+      font-weight: 600;
+    }
   }
-  @include media($hover_disable) { &:hover { color: $paragraph; } }
-  @include media($tablet) { margin: 28px 0 0; }
-  @include media($mobile_l) { font-size: 14px; }
-  @include media($mobile_s) { font-size: 12px; }
+  
+  &__description {
+    margin: 16px 0 6px;
+    @include fontStyle(21px, '', '');
+
+    @include media($tablet) {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    @include media($mobile_l) { font-size: 14px; }
+    @include media($mobile_s) { font-size: 12px; }
+  }
+
+  &__cta_button {
+    margin: 38px 0 60px;
+    @include display(flex, center, '', column);
+    color: $white-color;
+    @include fontStyle('', 700, uppercase);
+    @include transition;
+
+    &::after {
+      content: '\f107';
+      font-family: 'FontAwesome';
+      float: right;
+    }
+
+    @include media($hover) { &:hover { color: $paragraph; } }
+    @include media($tablet) { margin: 28px 0 0; }
+    @include media($mobile_l) { font-size: 14px; }
+    @include media($mobile_s) { font-size: 12px; }
+  }
 }
 // banner section ended here
 // project section started here
@@ -63,11 +71,13 @@
   @include media($mobile_l) { flex-basis: 50%; }
 }
 
-.portfolio-project__image { height: 100%; }
-
-.portfolio-project__image img {
-  object-fit: cover;
+.portfolio-project__image {
   height: 100%;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
 }
 // project section ended here
 // testimonial section started here
@@ -89,36 +99,38 @@
 .client-testimonial__list {
   margin-bottom: 60px;
   position: relative;
-}
 
-.client-testimonial__list p {
-  margin-top: 60px;
-  line-height: 1.6;
+  p {
+    margin-top: 60px;
+    line-height: 1.6;
+  
+    &::before {
+      content: '\f10d';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      color: $header-cta;
+      font-family: 'FontAwesome';
+      font-size: 28px;
+      float: right;
+      transform: translateX(-50%);
+    }
 
-  &::before {
-    content: '\f10d';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    color: $header-cta;
-    font-family: 'FontAwesome';
-    font-size: 28px;
-    float: right;
-    transform: translateX(-50%);
+    @include media($mobile_l) {
+      margin-top: 50px;
+      font-size: 14px;
+      line-height: 1.4;
+  
+      &::before { font-size: 22px; }
+    }
   }
-  @include media($mobile_l) {
-    margin-top: 50px;
-    font-size: 14px;
-    line-height: 1.4;
 
-    &::before { font-size: 22px; }
+  h3 {
+    margin-top: 16px;
+    font-weight: 900;
+
+    @include media($mobile_l) { font-size: 14px; }
   }
-}
-
-.client-testimonial__list h3 {
-  margin-top: 16px;
-  font-weight: 900;
-  @include media($mobile_l) { font-size: 14px; }
 }
 // testimonial section ended here
 // about section started here
@@ -128,7 +140,7 @@
 .about__link {
   padding: 18px 0 14px;
   @include display(flex, center, center, '');
-  color: #fff;
+  color: $white-color;
   @include fontStyle(18px, 700, uppercase);
   @include transition;
 
@@ -139,9 +151,7 @@
     float: right;
   }
   
-  @include media($hover_disable) {
-    &:hover { color: $paragraph; }
-  }
+  @include media($hover) { &:hover { color: $paragraph; } }
   @include media($mobile_l) { font-size: 16px; }
 }
 // about section ended here

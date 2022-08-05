@@ -15,48 +15,44 @@ header { background-color: $primary-color; }
   align-items: center;
   flex-basis: 40%;
 
-  @include media($tablet_l) {
-    flex-basis: 45%;
+  @include media($tablet_l) { flex-basis: 45%; }
+  @include media($tablet) { flex-basis: 50%; }
+  @include media($mobile_l) { flex-basis: 60%; }
+
+  &__image {
+    margin-right: 3%;
+    border: 6px solid $white-color;
+    border-radius: 50%;
+    flex-basis: 9%;
+
+    @include media($mobile_l) { flex-basis: 10%; }
+    @include media($mobile_s) { flex-basis: 20%; }
   }
+  
+  &__link {
+    @include display(flex, '', '', column);
+    color: $white-color;
 
-  @include media($tablet_l) {
-    flex-basis: 50%;
-  }
+    @include media($mobile_l) { 
+      &__link_sub_heading { font-size: 12px; }
+    }
 
-  @include media($tablet_l) {
-    flex-basis: 60%;
-  }
-}
+    @include media($mobile_s) { font-size: 12px; }
+    &_heading {
+      margin-bottom: 5px;
+      @include fontStyle(20px, 700, uppercase);
 
-.logo__image {
-  margin-right: 3%;
-  border: 6px solid #fff;
-  border-radius: 50%;
-  flex-basis: 9%;
-  @include media($mobile_l) { flex-basis: 10%; }
-  @include media($mobile_s) { flex-basis: 20%; }
-}
-
-.logo__link {
-  @include display(flex, '', '', column);
-  color: #fff;
-  @include media($mobile_l) { 
-    .logo__link_sub_heading { font-size: 12px; }
-  }
-  @include media($mobile_s) { font-size: 12px; }
-}
-
-.logo__link_heading {
-  margin-bottom: 5px;
-  @include fontStyle(20px, 700, uppercase);
-  @include media($mobile_s) {
-    margin-bottom: 0;
-    font-size: 16px;
+      @include media($mobile_s) {
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+    }
   }
 }
 
 .hamburger {
   display: none;
+
   @include media($tablet_l) {
     width: 4.5%;
     @include display(flex, '', '', column);
@@ -64,18 +60,18 @@ header { background-color: $primary-color; }
     right: 0;
     cursor: pointer;
 
-    .hamburger__line {
+    &__line {
       height: 5px;
       margin: 2px;
-      background-color: #fff;
+      background-color: $white-color;
       text-indent: -9999px;
       @include transition;
     }
 
-    .hamburger--active {
+    & &--active {
       .hamburger__line--one {
-        transform: rotate(45deg);
         margin-top: 6px;
+        transform: rotate(45deg);
       }
 
       .hamburger__line--two {
@@ -83,8 +79,8 @@ header { background-color: $primary-color; }
       }
 
       .hamburger__line--three {
-        transform: rotate(-45deg);
         margin-top: -6px;
+        transform: rotate(-45deg);
       }
     }
 
@@ -101,11 +97,12 @@ header { background-color: $primary-color; }
       .navbar__menu {
         align-items: center;
         flex-direction: column;
-      }
 
-      .navbar__menu_list { margin-left: 0; }
+        &_list { margin-left: 0; }
+      }
     }
   }
+
   @include media($tablet) { width: 5%; }
   @include media($mobile_l) { width: 8%; }
   @include media($mobile_s) { width: 10%; }
@@ -115,60 +112,68 @@ header { background-color: $primary-color; }
   margin-left: auto;
   flex-basis: 60%;
   @include transition;
+
   @include media($tablet_l) { display: none; }
   @include media($tablet) { padding: 80px 0; }
   @include media($mobile_l) { padding-bottom: 100px; }
 }
 
-.navbar__menu { @include display(flex, '', flex-end, ''); }
+.navbar__menu {
+  @include display(flex, '', flex-end, '');
 
-.navbar__menu_list {
-  margin-left: 3.3%;
-  
-  & .navbar__menu_list_item--active { border-bottom: 2px solid #fff; }
-}
+  &_list {
+    margin-left: 3.3%;
+    
+    & &_item--active { border-bottom: 2px solid $white-color; }
 
-.navbar__menu_list_item {
-  padding: 8px 0;
-  border-bottom: 2px solid transparent;
-  color: #fff;
-  @include fontStyle(14px, 600, uppercase);
-  @include transition;
-
-
-  @include media($hover_disable) {
-    &:hover { border-bottom: 2px solid #fff; }
+    &_item {
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+      color: $white-color;
+      @include fontStyle(14px, 600, uppercase);
+      @include transition;
+    
+      @include media($hover) {
+        &:hover { border-bottom: 2px solid $white-color; }
+      }
+    }
   }
 }
 
 .hire {
   margin-left: 1%;
   flex-basis: 8%;
+
   @include media($laptop) { flex-basis: 11%; }
+
   @include media($tablet_l) {
     margin-left: 30%;
     flex-basis: 20%;
   }
+
   @include media($tablet) { margin-left: 23%; }
   @include media($mobile_l) { margin-left: 8%; }
+
   @include media($mobile_s) {
     margin-left: 0;
     flex-basis: 23%;
   }
-}
 
-.hire__cta {
-  padding: 13px 11%;
-  background-color: $header-cta;
-  color: #fff;
-  @include fontStyle(14px, 600, uppercase);
-  @include transition;
-  @include media($hover_disable) {
-    &:hover { background-color: $header-cta-hover; }
-  }
-  @include media($mobile_l) {
-    padding: 8px 11%;
-    font-size: 12px;
+  &__cta {
+    padding: 13px 11%;
+    background-color: $header-cta;
+    color: $white-color;
+    @include fontStyle(14px, 600, uppercase);
+    @include transition;
+
+    @include media($hover) {
+      &:hover { background-color: $header-cta-hover; }
+    }
+
+    @include media($mobile_l) {
+      padding: 8px 11%;
+      font-size: 12px;
+    }
   }
 }
 /*=================================
