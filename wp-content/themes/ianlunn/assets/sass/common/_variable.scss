@@ -1,13 +1,19 @@
+// for colors
 $primary-color: #3994CE;
 $header-cta: #1F5D8A;
 $header-cta-hover: #015088;
 $paragraph: #272727;
-$menu_tag_line: #808080;
-$white-color: #fff;
-$black-color: #000;
-$laptop : '(max-width: 1024px)';
-$tablet_l : '(max-width: 995px)';
-$tablet : '(max-width: 768px)';
-$mobile_l : '(max-width: 540px)';
-$mobile_s : '(max-width: 375px)';
-$hover : '(min-width: 995px)';
+$menu-tag-line: #808080;
+$white: #fff;
+$black: #000;
+
+// responsive devices breakpoints
+$laptop : 1024px;
+$tablet : 995px;
+$iPad : 768px;
+$mobile : 540px;
+$iPhone : 375px;
+$hover : 995px;
+
+// vendor prefix list
+$vendors : 'webkit', 'moz', 'ms', 'o';

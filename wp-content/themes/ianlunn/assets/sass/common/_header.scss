@@ -1,0 +1,184 @@
+/*=================================
+  Header styling starts here
+=================================*/
+header { background-color: $primary-color; }
+
+.wrapper--header {
+  width: 84%;
+  padding: 26px 0;
+  @include flexBox(flex, null, center);
+  position: relative;
+}
+
+.logo {
+  @include flexBox(flex);
+  align-items: center;
+  flex-basis: 40%;
+
+  @include responsive($tablet) { flex-basis: 45%; }
+  @include responsive($iPad) { flex-basis: 50%; }
+  @include responsive($mobile) { flex-basis: 60%; }
+
+  &__image {
+    margin-right: 3%;
+    border: 6px solid $white;
+    border-radius: 50%;
+    flex-basis: 9%;
+
+    @include responsive($mobile) { flex-basis: 10%; }
+    @include responsive($iPhone) { flex-basis: 20%; }
+  }
+  
+  &__link {
+    @include flexBox(flex, null, null, column);
+    color: $white;
+
+    @include responsive($mobile) { 
+      &__link_sub_heading { font-size: 12px; }
+    }
+
+    @include responsive($iPhone) { font-size: 12px; }
+    &_heading {
+      margin-bottom: 5px;
+      @include fontProperty('overpass', 20px, null, 700);
+      text-transform: uppercase;
+
+      @include responsive($iPhone) {
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+
+  @include responsive($tablet) {
+    width: 4.5%;
+    @include flexBox(flex, null, null, column);
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+
+    &__line {
+      height: 5px;
+      margin: 2px;
+      background-color: $white;
+      text-indent: -9999px;
+      @include transition(all .3s ease);
+    }
+
+    & &--active {
+      .hamburger__line--one {
+        margin-top: 6px;
+        @include transform(rotate(45deg));
+      }
+
+      .hamburger__line--two {
+        display: none;
+      }
+
+      .hamburger__line--three {
+        margin-top: -6px;
+        @include transform(rotate(-45deg));
+      }
+    }
+
+    &:hover + .navbar--primary {
+      width: 100%;
+      padding: 65px 0;
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      background-color: $primary-color;
+      @include transform(translateX(-50%));
+
+      .navbar__menu {
+        align-items: center;
+        flex-direction: column;
+
+        &_list { margin-left: 0; }
+      }
+    }
+  }
+
+  @include responsive($iPad) { width: 5%; }
+  @include responsive($mobile) { width: 8%; }
+  @include responsive($iPhone) { width: 10%; }
+}
+
+.navbar--primary {
+  margin-left: auto;
+  flex-basis: 60%;
+  @include transition(all .3s ease);
+
+  @include responsive($tablet) { display: none; }
+  @include responsive($iPad) { padding: 80px 0; }
+  @include responsive($mobile) { padding-bottom: 100px; }
+}
+
+.navbar__menu {
+  @include flexBox(flex, null, null, null, null, flex-end);
+
+  &_list {
+    margin-left: 3.3%;
+    
+    & &_item--active { border-bottom: 2px solid $white; }
+
+    &_item {
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+      color: $white;
+      @include fontProperty('overpass', 14px, null, 600);
+      text-transform: uppercase;
+      @include transition(all .3s ease);
+    
+      @include reverseResponsive($tablet) {
+        &:hover { border-bottom: 2px solid $white; }
+      }
+    }
+  }
+}
+
+.hire {
+  margin-left: 1%;
+  @include flexBasis(flex-basis, 9%);
+
+  @include responsive($laptop) { flex-basis: 11%; }
+
+  @include responsive($tablet) {
+    margin-left: 30%;
+    flex-basis: 20%;
+  }
+
+  @include responsive($iPad) { margin-left: 23%; }
+  @include responsive($mobile) { margin-left: 8%; }
+
+  @include responsive($iPhone) {
+    margin-left: 0;
+    flex-basis: 23%;
+  }
+
+  &__cta {
+    padding: 13px 11%;
+    background-color: $header-cta;
+    color: $white;
+    @include fontProperty('overpass', 14px, null, 600);
+    text-transform: uppercase;
+    @include transition(all .3s ease);
+
+    @include reverseResponsive($tablet) {
+      &:hover { background-color: $header-cta-hover; }
+    }
+
+    @include responsive($mobile) {
+      padding: 8px 11%;
+      font-size: 12px;
+    }
+  }
+}
+/*=================================
+  Header styling ends here
+=================================*/
